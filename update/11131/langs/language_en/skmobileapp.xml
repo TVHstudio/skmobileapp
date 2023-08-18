@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<prefix name="skmobileapp" label="Skadate Mobile APP" language_tag="en" language_label="English">
+    <key name="view_my_profile_no_permission_message"><value>User chooses not to share this content.</value></key>
+</prefix>

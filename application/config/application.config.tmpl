@@ -1,0 +1,68 @@
+# GENERAL 
+
+VERSION="3.0.1"
+VERSION_BUILD="1"
+BUNDLE_NAME="com.timny"
+NAME="Timny"
+SHORT_NAME="Timny"
+DESCRIPTION="Timny - Kết bạn trực tuyến"
+DEBUG_MODE="false"
+
+# LOGGER
+
+# Defines logger used in the app.
+#
+# Available types:
+#
+#   * sentry - sends error logs to the sentry.io service. Requires SENTRY_DSN parameter to be set.
+#   * local  - logs errors to the log table on the app backend. Used if the LOGGER_TYPE value is
+#              unknown or the required parameters for the selected logger were not set correctly.
+
+LOGGER_TYPE="local"
+
+# SENTRY
+
+SENTRY_DSN=""
+
+# API
+
+API_PROTOCOL="https"
+API_DOMAIN="timny.com"
+API_URI="/skmobileapp/api/"
+
+# PWA FIREBASE
+
+PWA_FIREBASE_API_KEY="AIzaSyAWWgSyI7CxCdvZikY7rEgvMA-cFzPqpHc"
+PWA_FIREBASE_AUTH_DOMAIN="timny-361806.firebaseapp.com"
+PWA_FIREBASE_PROJECT_ID="timny-361806"
+PWA_FIREBASE_STORAGE_BUCKET="timny-361806.appspot.com"
+PWA_FIREBASE_MESSAGING_SENDER_ID="5703412440"
+PWA_FIREBASE_APP_ID="1:5703412440:web:85c0a74a14120a655bc5ad"
+PWA_FIREBASE_ANALYTICS_MEASUREMENT_ID="G-67ZME5LVDF"
+PWA_FIREBASE_ANALYTICS_ENABLED="false"
+PWA_FIREBASE_VAPID_KEY="BPCEu0UIT8HHz6YdHFwLkJmF9ar_nRoaTk82aERX7mg-i-SSyYGNMJzLeLyldEfYXrFVoFqS_5sS7lYbRRBkpMg"
+
+# ADMOB
+
+# Do not use real app IDs for testing! This can result in account suspension.
+# Get test app IDs here:
+# https://developers.google.com/admob/android/quick-start#update_your_androidmanifestxml
+
+# Obtaining this value in production: https://hello.skadate.com/docs/manuals/admob_android
+ADMOB_ANDROID_APP_ID="ca-app-pub-3940256099942544~3347511714"
+
+# Obtaining this value in production: https://hello.skadate.com/docs/manuals/admob_ios
+ADMOB_IOS_APP_ID="ca-app-pub-3940256099942544~3347511714"
+
+# SOCIAL AUTH
+
+SOCIAL_AUTH_FACEBOOK_APP_ID="1559104124477838"
+SOCIAL_AUTH_TWITTER_CONSUMER_KEY="m47ZZjNDYhnQx8OeSHx6g"
+SOCIAL_AUTH_TWITTER_CONSUMER_SECRET="ZdT6kvyTywmZTAmW8fhcQcT00fFUBNGC28srxD4eavA"
+SOCIAL_AUTH_APPLE_CLIENT_ID="com.timny.com"
+
+# ANDROID RELEASE
+
+ANDROID_RELEASE_KEYSTORE_PASSWORD="com.timny"
+ANDROID_RELEASE_KEY_ALIAS="timny"
+ANDROID_RELEASE_KEYSTORE_FILE_PATH="/Volumes/proekt/client1/2960/2960.jks"

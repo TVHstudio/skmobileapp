@@ -1,0 +1,66 @@
+{$menu}
+
+{form name='skmobileapp_theme'}
+    <table class="ow_table_1 ow_form">
+        <tr class="ow_tr_first">
+            <th class="ow_name ow_txtleft" colspan="3">
+                <span class="ow_section_icon ow_ic_gear_wheel">{text key='skmobileapp+general'}</span>
+            </th>
+        </tr>
+
+        {if {$logoFileName}}
+            <tr class="ow_alt1">
+                <td class="ow_label">{text key='skmobileapp+theme_logo_label'}</td>
+                <td class="ow_value">
+                    <a href="{$baseThemeFilesUrl}{$logoFileName}" target="_blank">
+                        {$logoFileName}
+                    </a>
+                    <br /><br />
+                    <label>
+                        <input type="checkbox" name="delete_logo" /> {text key='skmobileapp+theme_delete_file_label'}
+                    </label>
+                </td>
+                <td class="ow_desc"></td>
+            </tr>
+        {/if}
+
+        <tr class="ow_alt1">
+            <td class="ow_label">{label name='logo'}</td>
+            <td class="ow_value">{input name='logo'}<br />{error name='logo'}</td>
+            <td class="ow_desc">{desc name='logo'}</td>
+        </tr>
+
+        <tr class="ow_alt1">
+            <td class="ow_label">{label name='logo_width'}</td>
+            <td class="ow_value">{input name='logo_width'}<br />{error name='logo_width'}</td>
+            <td class="ow_desc">{desc name='logo_width'}</td>
+        </tr>
+ 
+        {if {$backgroundFileName}}
+            <tr class="ow_alt1">
+                <td class="ow_label">{text key='skmobileapp+theme_background_label'}</td>
+                <td class="ow_value">
+                    <a href="{$baseThemeFilesUrl}{$backgroundFileName}" target="_blank">
+                        {$backgroundFileName}
+                    </a>
+                    <br /><br />
+                    <label>
+                        <input type="checkbox" name="delete_background" /> {text key='skmobileapp+theme_delete_file_label'}
+                    </label>
+                </td>
+                <td class="ow_desc"></td>
+            </tr>
+        {/if}
+
+        <tr class="ow_alt1">
+            <td class="ow_label">{label name='background'}</td>
+            <td class="ow_value">{input name='background'}<br />{error name='background'}</td>
+            <td class="ow_desc">{desc name='background'}</td>
+        </tr>
+    </table>
+    <div class="clearfix ow_stdmargin">
+        <div class="ow_right">
+            {submit name='theme_submit'}
+        </div>
+    </div>
+{/form}

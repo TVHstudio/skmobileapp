@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "5703412440",
+    "project_id": "timny-361806",
+    "storage_bucket": "timny-361806.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:5703412440:android:ae881285f904addf5bc5ad",
+        "android_client_info": {
+          "package_name": "com.timny"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "5703412440-t0jtiddv145bpfaa12j2gp1ukqqtr6it.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApHHTqQCZLQkFXQvwCfWRyHbOndZU_suw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "5703412440-t0jtiddv145bpfaa12j2gp1ukqqtr6it.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "5703412440-c25vroia418fsp6nsu146fvgf3m9lq83.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.timny"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

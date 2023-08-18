@@ -1,0 +1,41 @@
+{
+    "name": "skadate/skmobileapp",
+    "authors": [
+        {
+            "name": "skadate",
+            "email": "info@skadate.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Skadate\\Mobile\\": "src/"
+        }
+    },
+    "require": {
+        "silex/silex": "~2.0",
+        "cnam/security-jwt-service-provider": "~2.1",
+        "jdesrosiers/silex-cors-provider": "~1.4",
+        "firebase/php-jwt": "^4.0",
+        "kreait/firebase-php": "^5.0",
+        "google/apiclient": "^2.9",
+        "aporat/store-receipt-validator": "^4.0"
+    },
+    "config": {
+        "platform": {
+            "php": "7.3"
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "Google\\Task\\Composer::cleanup"
+        ],
+        "post-update-cmd": [
+            "Google\\Task\\Composer::cleanup"
+        ]
+    },
+    "extra": {
+        "google/apiclient-services": [
+            "AndroidPublisher"
+        ]
+    }
+}

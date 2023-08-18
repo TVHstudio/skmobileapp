@@ -1,0 +1,121 @@
+{$menu}
+
+{form name='skmobileapp_inapps'}
+<table class="ow_table_1 ow_form">
+    <tr class="ow_tr_first">
+        <th class="ow_name ow_txtleft" colspan="3">
+            <span class="ow_section_icon ow_ic_gear_wheel">{text key='skmobileapp+general'}</span>
+        </th>
+    </tr>
+
+    <tr class="ow_alt1">
+        <td class="ow_label">{label name='inapps_enable'}</td>
+        <td class="ow_value">{input name='inapps_enable'}<br />{error name='inapps_enable'}</td>
+        <td class="ow_desc">{desc name='inapps_enable'}</td>
+    </tr>
+
+    <tr class="ow_alt1">
+        <td class="ow_label">{label name='inapps_apm_package_name'}</td>
+        <td class="ow_value">{input name='inapps_apm_package_name'}<br />{error name='inapps_apm_package_name'}</td>
+        <td class="ow_desc">{desc name='inapps_apm_package_name'}</td>
+    </tr>
+
+    <tr class="ow_alt1">
+        <td class="ow_label">{label name='inapps_show_membership_actions'}</td>
+        <td class="ow_value">{input name='inapps_show_membership_actions'}<br />{error name='inapps_show_membership_actions'}</td>
+        <td class="ow_desc">{desc name='inapps_show_membership_actions'}</td>
+    </tr>
+
+    <tr class="ow_tr_delimiter"><td></td></tr>
+
+    <tr class="ow_tr_first">
+        <th class="ow_name ow_txtleft" colspan="3">
+            <span class="ow_section_icon ow_ic_mobile">{text key='skmobileapp+android'}</span>
+        </th>
+    </tr>
+
+    {if isset($androidPrivateKeySet)}
+        <tr class="ow_alt1">
+            <td class="ow_label">{text key='skmobileapp+settings_android_client_email_label'}</td>
+            <td class="ow_value">{$androidPrivateKeyClientEmail}</td>
+            <td class="ow_desc"></td>
+        </tr>
+        <tr>
+            <td class="ow_label">{text key='skmobileapp+settings_account_private_key_label'}</td>
+            <td class="ow_value"><span class="ow_mild_green">{text key="skmobileapp+inapps_private_key_set"}</span></td>
+            <td class="ow_desc"></td>
+        </tr>
+    {else}
+        <tr>
+            <td class="ow_label">{text key='skmobileapp+settings_account_private_key_label'}</td>
+            <td class="ow_value"><span class="ow_mild_red">{text key="skmobileapp+inapps_private_key_not_set"}</span></td>
+            <td class="ow_desc"></td>
+        </tr>
+    {/if}
+
+    <tr class="ow_alt1">
+        <td class="ow_label">{label name='inapps_apm_android_account_key'}</td>
+        <td class="ow_value">{input name='inapps_apm_android_account_key'}<br />{error name='inapps_apm_android_account_key'}</td>
+        <td class="ow_desc">{desc name='inapps_apm_android_account_key'}</td>
+    </tr>
+
+    <tr class="ow_tr_delimiter"><td></td></tr>
+
+    <tr class="ow_tr_first">
+        <th class="ow_name ow_txtleft" colspan="3">
+            <span class="ow_section_icon ow_ic_mobile">{text key='skmobileapp+ios'}</span>
+        </th>
+    </tr>
+
+    <tr class="ow_alt1">
+        <td class="ow_label">{label name='inapps_itunes_shared_secret'}</td>
+        <td class="ow_value">{input name='inapps_itunes_shared_secret'}<br />{error name='inapps_itunes_shared_secret'}</td>
+        <td class="ow_desc">{desc name='inapps_itunes_shared_secret'}</td>
+    </tr>
+
+    <tr class="ow_alt1">
+        <td class="ow_label">{label name='inapps_ios_test_mode'}</td>
+        <td class="ow_value">{input name='inapps_ios_test_mode'}<br />{error name='inapps_ios_test_mode'}</td>
+        <td></td>
+    </tr>
+
+    <tr class="ow_tr_delimiter"><td></td></tr>
+
+    <tr class="ow_tr_first">
+        <th class="ow_name ow_txtleft" colspan="3">
+            <span class="ow_section_icon ow_ic_gear_wheel">{text key='skmobileapp+inapps_webhook_urls'}</span>
+        </th>
+    </tr>
+
+    <tr class="ow_alt1">
+        <td class="ow_label">
+            <label for="webhook_url_google_play">{text key='skmobileapp+google_play_webhook_url'}</label>
+        </td>
+        <td class="ow_value">
+            <input id="webhook_url_google_play" class="webhook_url" type="text" value="{$googlePlayWebhookUrl}" readonly>
+        </td>
+        <td></td>
+    </tr>
+
+    <tr class="ow_alt1">
+        <td class="ow_label">
+            <label for="webhook_url_app_store">{text key='skmobileapp+app_store_webhook_url'}</label>
+        </td>
+        <td class="ow_value">
+            <input type="text" id="webhook_url_app_store" class="webhook_url" value="{$appStoreWebhookUrl}" readonly>
+        </td>
+        <td></td>
+    </tr>
+</table>
+<div class="clearfix ow_stdmargin">
+    <div class="ow_right">
+        {submit name='inapps_submit'}
+    </div>
+</div>
+{/form}
+
+{script}
+    $('.webhook_url').focus(function () {
+        $(this).select();
+    });
+{/script}

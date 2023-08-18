@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<prefix name="skmobileapp" label="Skadate Mobile APP" language_tag="en" language_label="English">
+    <key name="app_android_google_privacy_link_to_play_store">
+        <value>https://play.google.com/store/account/subscriptions</value>
+    </key>
+</prefix>

@@ -1,0 +1,112 @@
+{$menu}
+
+{form name='skmobileapp_ads'}
+<table class="ow_table_1 ow_form">
+    <tr class="ow_tr_first">
+        <th class="ow_name ow_txtleft" colspan="3">
+            <span class="ow_section_icon ow_ic_gear_wheel">{text key='skmobileapp+ads_settings'}</span>
+        </th>
+    </tr>
+
+    <tr class="ow_alt1">
+        <td class="ow_label">{label name='android_ad_unit_id'}</td>
+        <td class="ow_value">{input name='android_ad_unit_id'}<br />{error name='android_ad_unit_id'}</td>
+        <td class="ow_desc">{desc name='android_ad_unit_id'}</td>
+    </tr>
+
+    <tr class="ow_alt1">
+        <td class="ow_label">{label name='ios_ad_unit_id'}</td>
+        <td class="ow_value">{input name='ios_ad_unit_id'}<br />{error name='ios_ad_unit_id'}</td>
+        <td class="ow_desc">{desc name='ios_ad_unit_id'}</td>
+    </tr>
+
+    <tr class="ow_alt1">
+        <td class="ow_label">{label name='ads_enabled'}</td>
+        <td colspan="3" class="ow_value">{input name='ads_enabled'}<br />{error name='ads_enabled'}</td>
+    </tr>
+</table>
+
+<table class="ow_table_1 ow_form">
+    <tr class="ow_tr_first">
+        <th colspan="4" class="ow_name ow_txtleft">
+            <span class="ow_section_icon ow_ic_gear_wheel">{text key='skmobileapp+admob_advertisement_pages'}</span>
+        </th>
+    </tr>
+    <tr>
+        <th style="width: 30%">{text key='skmobileapp+admob_settings_page_name'}</th>
+        <th>{text key='skmobileapp+admob_settings_page_id'}</th>
+        <th>{text key='skmobileapp+admob_settings_page_mappings'}</th>
+        <th>
+            {text key='skmobileapp+admob_ads_enabled'}
+            (<a id="disable_all" data-disable-all-state="{$disableAllLinkState}" href="#">{$disableAllLinkLabel}</a>)
+        </th>
+    </tr>
+    {foreach from=$admobPages key='pageId' item='page'}
+        <tr>
+            <td style="text-align: center">
+                <label for="{$pageId}_ads_enabled">{$page.translatedPageName}</label>
+            </td>
+            <td style="text-align: center; font-size: 0.8em;">
+                <label for="{$pageId}_ads_enabled">
+                    <code>{$pageId}</code>
+                </label>
+            </td>
+            <td style="text-align: center; font-size: 0.8em">
+                {if empty($page.regex)}
+                    <p>
+                        <label for="{$pageId}_ads_enabled">
+                            <code>{text key='skmobileapp+admob_special_mapping'}</code>
+                        </label>
+                    </p>
+                {elseif !isset($page.regex)}
+                    <p>
+                        <label for="{$pageId}_ads_enabled">
+                            <code>{text key='skmobileapp+admob_empty_mapping'}</code>
+                        </label>
+                    </p>
+                {else}
+                    {foreach from=$page.regex item='regex'}
+                        <p style="margin: 0">
+                            <label for="{$pageId}_ads_enabled">
+                                <code>{$regex}</code>
+                            </label>
+                        </p>
+                    {/foreach}
+                {/if}
+            </td>
+            <td style="text-align: center">
+                {if $page.adsEnabled == 1}
+                    <input id="{$pageId}_ads_enabled" class="ads_enabled_checkbox" type="checkbox" name="admobPages[{$pageId}]" value="true" checked>
+                {else}
+                    <input id="{$pageId}_ads_enabled" class="ads_enabled_checkbox" type="checkbox" name="admobPages[{$pageId}]" value="true">
+                {/if}
+            </td>
+        </tr>
+    {/foreach}
+</table>
+
+<div class="clearfix ow_stdmargin">
+    <div class="ow_right">
+        {submit name='ads_submit'}
+    </div>
+</div>
+{/form}
+
+{script}
+    const enableAllLabel = '{$enableAllLabel}';
+    const disableAllLabel = '{$disableAllLabel}';
+
+    $('#disable_all').on('click', function () {
+        const $this = $(this);
+
+        if ($this.data('disable-all-state')) {
+            $('.ads_enabled_checkbox').attr('checked', true);
+            $this.data('disable-all-state', false);
+            $this.text(disableAllLabel);
+        } else {
+            $('.ads_enabled_checkbox').attr('checked', false);
+            $this.data('disable-all-state', true);
+            $this.text(enableAllLabel);
+        }
+    });
+{/script}

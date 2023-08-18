@@ -1,0 +1,7 @@
+vendor/
+static/src/*
+!static/src/.htaccess
+.DS_Store
+skmobileapp.code-workspacegit
+skmobileapp.code-workspace
+composer.phar
